@@ -20,7 +20,7 @@ router.get('/braintree/token', function (req, res) {
 });
 
 //Use nonce received from web or mobile app to create a transaction
-router.get('/braintree/transaction', function (req, res) {
+router.post('/braintree/transaction', function (req, res) {
   var transactionErrors;
   var amount = req.body.amount; // In production you should not take amounts directly from clients
   var nonce = req.body.payment_method_nonce;
